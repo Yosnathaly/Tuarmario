@@ -1,0 +1,14 @@
+.header {
+    background-image: linear-gradient(to left, #3d3c3c00, #000000bd), url("https://images.pexels.com/photos/762041/pexels-photo-762041.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-size: cover;
+    width: auto;
+    height: auto;
+    border: 2px round;
+    background-position: 0rem -4rem;
+   
+}
+@media (min-width: 768px) {
+   .hero{
+    background-size: cover;
+   }
+}

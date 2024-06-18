@@ -1,0 +1,11 @@
+body {
+   box-sizing: border-box;
+}
+img { 
+    max-width: 100%; 
+    display:block;
+}
+a.active {
+    color: red;
+    text-decoration: underline;
+}
