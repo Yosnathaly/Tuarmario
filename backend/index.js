@@ -1,10 +1,11 @@
 const express = require("express");
+const app = express();
 const env = require("dotenv").config();
 const cors = require("cors");
 const productos = require("./productos.json")
 const { pool } = require("./database/connection.js");
 const jwt = require("jsonwebtoken");
-const app = express();
+const { getProductos, deleteProductos, verificarCredenciales, registrarUsuario } = require('./consultas')
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -14,13 +15,24 @@ app.listen(PORT, () => {
 app.use(cors());
 app.use(express.json());
 
-app.get ("/productos", (req, res) => {
-  res.status(200).send(productos)
-})
-
-// app.get ("/productos/:id", (req, res) => {
+// Llamado al json local
+// app.get ("/productos", (req, res) => {
 //   res.status(200).send(productos)
 // })
+
+// Llamado a la db
+app.get("/productos", async (req, res) => {
+  try {
+      const productos = await getProductos()
+      res.json(productos)
+  } catch (error) {
+      res.status(error.code || 500).send(error)
+  }
+})
+
+app.get ("/productos/:id", (req, res) => {
+  res.status(200).send(productos)
+})
 
 app.post("/productos", (req, res) => {
   const producto = req.body
@@ -32,6 +44,28 @@ app.post("/productos", (req, res) => {
       res.status(201).send(productos)
   }
 });
+
+app.post ("/login", async (req, res) => {
+  try {
+      const { email, password } = req.body
+      await verificarCredenciales(email, password)
+      const token = jwt.sign({ email }, "az_AZ", { expiresIn: 60})
+      res.send(token)
+  } catch (error) {
+      console.log(error)
+      res.status(error.code || 500).send(error)
+  }
+})
+
+app.post ("/usuarios", async (req, res) => {
+  try {
+      const usuario = req.body
+      await registrarUsuario(usuario)
+      res.send("Usuario creado con exito")
+  } catch (error) {
+      res.status(500).send(error)
+  }
+})
 
 app.put("/productos/:id", (req, res) => {
   const producto = req.body;
@@ -71,7 +105,21 @@ app.delete("/productos/:id", (req, res) => {
   } else res.status(400).send({ message: "No recibió ningún token en las cabeceras" })
 });
 
+// utiliza token para verificar, falta ejecutar el delete
+// app.delete ("/productos/:id", async (req, res) => {
+//   try {
+//       const { id } = req.params
+//       const Authorization = req.header("Authorization")
+//       const token = Authorization.split("Bearer ")[1]
+//       jwt.verify(token, "az_AZ")
+//       const { email } = jwt.decode(token)
+//       res.send(`El usuario ${email} ha eliminado el evento de id ${id}`)
+//   } catch (error) {
+//       res.status(error.code || 500).send(error)
+//   }
+// })
+
 
 app.use("*", (req, res) => {
-  res.status(404).send({ message: "La ruta asdasdsque intenta consultar no existe" })
+  res.status(404).send({ message: "La ruta que intenta consultar no existe" })
 });
