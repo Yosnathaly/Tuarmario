@@ -1,54 +1,54 @@
 [
     {
+      "id": "1",
       "desc": "Un clásico infaltable en cualquier invierno, súper canchero y suave ❤️ Se destaca por su calidad y su caída :).",
-      "id": "P001",
       "img": "https://pontetu.cl/cdn/shop/files/SN1448-2.jpg?crop=center&height=1350&v=1717556880&width=900",
-      "ingredients": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
+      "caracteristicas": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
       "name": "POLERÓN TULIPAN AZUL",
       "price": 5950,
       "cantidad": 0
     },
     {
+      "id": "2",
       "desc": "Un clásico infaltable en cualquier invierno, súper canchero y suave ❤️ Se destaca por su calidad y su caída :).",
-      "id": "P002",
       "img": "https://pontetu.cl/cdn/shop/files/img_6659-cd65271a0b2cf75a0317093003835540-1024-1024_1.webp?crop=center&height=1350&v=1717370946&width=900",
-      "ingredients": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
+      "caracteristicas": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
       "name": "POLERÓN TULIPAN ROJO",
       "price": 7250,
       "cantidad": 0
     },
     {
+      "id": "3",
       "desc": "Un clásico infaltable en cualquier invierno, súper canchero y suave ❤️ Se destaca por su calidad y su caída :).",
-      "id": "P003",
       "img": "https://pontetu.cl/cdn/shop/files/240509_RENEE_2538.webp?crop=center&height=1050&v=1717013279&width=700",
-      "ingredients": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
+      "caracteristicas": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
       "name": "MAXI POLERON ANIMAL PRINT ROJO",
       "price": 5990,
       "cantidad": 0
     },
     {
+      "id": "4",
       "desc": "Un clásico infaltable en cualquier invierno, súper canchero y suave ❤️ Se destaca por su calidad y su caída :).",
-      "id": "P004",
       "img": "https://pontetu.cl/cdn/shop/files/058b7565-4d5b-4ab4-9eba-241e7ccde34c-1bf68de05123793d9417175059681643-1024-1024.webp?crop=center&height=1275&v=1717558058&width=850",
-      "ingredients": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
+      "caracteristicas": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
       "name": "SWEATER FUEGO BLANCO",
       "price": 9590,
       "cantidad": 0
     },
     {
+      "id": "5",
       "desc": "Un clásico infaltable en cualquier invierno, súper canchero y suave ❤️ Se destaca por su calidad y su caída :).",
-      "id": "P005",
       "img": "https://pontetu.cl/cdn/shop/files/41054cb3-d8ef-4697-bfd9-e473725e313e-593a19b8dc4c17c23117175059881142-1024-1024.webp?crop=center&height=1275&v=1717558153&width=850",
-      "ingredients": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
+      "caracteristicas": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
       "name": "CHALECO THOIS",
       "price": 6450,
       "cantidad": 0
     },
     {
+      "id": "6",
       "desc": "Un clásico infaltable en cualquier invierno, súper canchero y suave ❤️ Se destaca por su calidad y su caída :).",
-      "id": "P006",
       "img": "https://pontetu.cl/cdn/shop/files/92db9baf-1f8f-4ab6-880c-6f2b2cc589b1-929f4f0ba86e442afb17168362400327-1024-1024.webp?crop=center&height=1275&v=1717016728&width=850",
-      "ingredients": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
+      "caracteristicas": ["Busto 63cm", "Cadera 60cm", "Largo de frente 57cm", "Largo de atrás 60cm", "Largo de mangas 43cm"],
       "name": "POLERA BALI",
       "price": 8500,
       "cantidad": 0
