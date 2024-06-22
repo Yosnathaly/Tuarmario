@@ -49,7 +49,7 @@ app.post ("/login", async (req, res) => {
   try {
       const { email, password } = req.body
       await verificarCredenciales(email, password)
-      const token = jwt.sign({ email }, "az_AZ", { expiresIn: 60})
+      const token = jwt.sign({ email }, "az_AZ", { expiresIn: 120})
       res.send(token)
   } catch (error) {
       console.log(error)
@@ -88,36 +88,36 @@ app.put("/productos/:id", (req, res) => {
   }
 });
 
-app.delete("/productos/:id", (req, res) => {
-  const jwt = req.header("Authorization")
-  if (jwt) {
-      const { id } = req.params
-      const productoIndexFound = productos.findIndex(c => c.id == id)
+// app.delete("/productos/:id", (req, res) => {
+//   const jwt = req.header("Authorization")
+//   if (jwt) {
+//       const { id } = req.params
+//       const productoIndexFound = productos.findIndex(c => c.id == id)
 
-      if (productoIndexFound >= 0) {
-          productos.splice(productoIndexFound, 1)
-          console.log(productoIndexFound, productos)
-          res.send(productos)
-      } else {
-          res.status(404).send({ message: "No se encontró ningún producto con ese id" })
-      }
+//       if (productoIndexFound >= 0) {
+//           productos.splice(productoIndexFound, 1)
+//           console.log(productoIndexFound, productos)
+//           res.send(productos)
+//       } else {
+//           res.status(404).send({ message: "No se encontró ningún producto con ese id" })
+//       }
 
-  } else res.status(400).send({ message: "No recibió ningún token en las cabeceras" })
-});
+//   } else res.status(400).send({ message: "No recibió ningún token en las cabeceras" })
+// });
 
 // utiliza token para verificar, falta ejecutar el delete
-// app.delete ("/productos/:id", async (req, res) => {
-//   try {
-//       const { id } = req.params
-//       const Authorization = req.header("Authorization")
-//       const token = Authorization.split("Bearer ")[1]
-//       jwt.verify(token, "az_AZ")
-//       const { email } = jwt.decode(token)
-//       res.send(`El usuario ${email} ha eliminado el evento de id ${id}`)
-//   } catch (error) {
-//       res.status(error.code || 500).send(error)
-//   }
-// })
+app.delete ("/productos/:id", async (req, res) => {
+  try {
+      const { id } = req.params
+      const Authorization = req.header("Authorization")
+      const token = Authorization.split("Bearer ")[1]
+      jwt.verify(token, "az_AZ")
+      const { email } = jwt.decode(token)
+      res.send(`El usuario ${email} ha eliminado el producto de id ${id}`)
+  } catch (error) {
+      res.status(error.code || 500).send(error)
+  }
+})
 
 
 app.use("*", (req, res) => {

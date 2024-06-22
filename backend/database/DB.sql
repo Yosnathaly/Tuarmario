@@ -32,3 +32,5 @@ INSERT INTO productos (id, descripcion, img, caracteristicas, name, price, canti
   'SWEATER BEACH VERDE',
   8900,
   5);
+
+--DROP TABLE usuarios;

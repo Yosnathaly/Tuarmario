@@ -32,5 +32,14 @@ const registrarUsuario = async (usuario) => {
     const consulta = "INSERT INTO usuarios values (DEFAULT, $1, $2)"
     await pool.query(consulta, values)
 }
+// arreglar para subir producto
+const agregarProducto = async (producto) => {
+    let {  } = producto
+    const passwordEncriptada = bcrypt.hashSync(password)
+    password = passwordEncriptada
+    const values = [email, passwordEncriptada]
+    const consulta = "INSERT INTO productos values (DEFAULT, $1, $2)"
+    await pool.query(consulta, values)
+}
 
-module.exports = { getProductos, deleteProducto, verificarCredenciales, registrarUsuario }
+module.exports = { getProductos, deleteProducto, verificarCredenciales, registrarUsuario, agregarProducto }
