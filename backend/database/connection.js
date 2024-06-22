@@ -18,5 +18,4 @@ try {
   console.log(error);
 }
 
-
 module.exports = { pool }
